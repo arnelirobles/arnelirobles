@@ -23,10 +23,10 @@ The decisions are the work. Event sourcing over CRUD and what that costs on the 
 ### Open source contributor
 
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="11 merged upstream" src="https://img.shields.io/badge/upstream-11%20merged-2ea44f?style=flat-square&logo=github"></a>
-<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="5 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-5-1f6feb?style=flat-square&logo=github"></a>
+<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="7 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-7-1f6feb?style=flat-square&logo=github"></a>
 <a href="https://github.com/BaryoDev"><img alt="30 public repositories" src="https://img.shields.io/badge/%40BaryoDev-30%20public%20repos-8957e5?style=flat-square&logo=github"></a>
 
-**Eleven merged fixes and five accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Each was found by using the thing, not by browsing for issues. The badges are live searches, so they answer for themselves.
+**Eleven merged fixes and seven accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. None came from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
 | Project | | What was wrong |
 |---|---|---|
@@ -39,6 +39,8 @@ Most of these reports were fixed by the projects' own maintainers rather than by
 
 | Reported | Outcome |
 |---|---|
+| [marten#5501](https://github.com/JasperFx/marten/issues/5501) | When the event loader fell back to skipping ahead, it reported a floor above the one requested, so the projection's progress write matched no rows. Fixed the same day in [#5506](https://github.com/JasperFx/marten/pull/5506), shipped in 9.39.1. |
+| [marten#5502](https://github.com/JasperFx/marten/issues/5502) | Only the first progress write in a batch had its row count checked, so a stale one after it committed silently. The fix in [#5507](https://github.com/JasperFx/marten/pull/5507) found this also covered every member of a composite projection. Shipped in 9.39.1. |
 | [marten#5239](https://github.com/JasperFx/marten/issues/5239) | A projection's event loader reported a ceiling it never scanned, so events could be skipped permanently. Confirmed by the maintainer as silent, permanent data loss, fixed in [#5242](https://github.com/JasperFx/marten/pull/5242), and I then fixed the same flaw in the shared library underneath in [jasperfx#670](https://github.com/JasperFx/jasperfx/pull/670). |
 | [marten#5234](https://github.com/JasperFx/marten/issues/5234) | Event masking and stream compaction wrote across tenants under partitioned event tenancy. Fixed in [#5236](https://github.com/JasperFx/marten/pull/5236). |
 | [marten#5222](https://github.com/JasperFx/marten/issues/5222) | An audit reported a check as passing that it had not actually performed. Fixed in [#5231](https://github.com/JasperFx/marten/pull/5231). |
