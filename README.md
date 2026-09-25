@@ -8,6 +8,16 @@
   <a href="mailto:arnelirobles@gmail.com">email</a>
 </p>
 
+<p align="center"><sub>
+  <a href="#open-source-contributor">Open source</a> ·
+  <a href="#what-i-have-built-for-other-people">Client work</a> ·
+  <a href="#barakocms">barakoCMS</a> ·
+  <a href="#libraries-and-tooling">Libraries</a> ·
+  <a href="#writing">Writing</a> ·
+  <a href="#how-i-work">How I work</a> ·
+  <a href="#stack">Stack</a>
+</sub></p>
+
 ---
 
 15 years in production software, most of it on systems where being wrong costs something: derivatives trading for US financial institutions, hospital, medical records and national health insurance systems, ERP and payroll, billing and cashiering.
@@ -28,12 +38,12 @@ The decisions are the work. Event sourcing over CRUD and what that costs on the 
 
 **Eleven merged fixes and seven accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. None came from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
-| Project | | What was wrong |
-|---|---|---|
-| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)** | ★5.2k | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2 |
-| **[testcontainers/testcontainers-dotnet](https://github.com/testcontainers/testcontainers-dotnet)** | ★4.4k | MongoDB replica-set init was not idempotent, so a reused container hung against a one-hour timeout. [#1731](https://github.com/testcontainers/testcontainers-dotnet/pull/1731), [#1735](https://github.com/testcontainers/testcontainers-dotnet/pull/1735). A reused Couchbase container then stalled on the first step of configuring a cluster that was already configured. [#1736](https://github.com/testcontainers/testcontainers-dotnet/pull/1736) |
-| **[JasperFx/marten](https://github.com/JasperFx/marten)** | ★3.5k | `HardDeleteWhere` could not remove already soft-deleted rows, and returned cleanly either way. [#5215](https://github.com/JasperFx/marten/pull/5215), [#5202](https://github.com/JasperFx/marten/pull/5202), [#5240](https://github.com/JasperFx/marten/pull/5240). The parameterised `MatchesJsonPath` overload threw on every call, so no one could have been using it. [#5289](https://github.com/JasperFx/marten/pull/5289). The pgvector docs still described a recall cap the library had stopped applying, and the caveat that replaced it was wrong for hybrid search. [#5467](https://github.com/JasperFx/marten/pull/5467) |
-| **[JasperFx/jasperfx](https://github.com/JasperFx/jasperfx)** | core | The event loader claimed a ceiling it had never scanned, so a fully skipped batch could advance past events and lose them permanently. Reported on Marten, then fixed at the source. [#670](https://github.com/JasperFx/jasperfx/pull/670) |
+| Project | What was wrong |
+|---|---|
+| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.2k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2 |
+| **[testcontainers/testcontainers-dotnet](https://github.com/testcontainers/testcontainers-dotnet)**<br><sub>★4.4k</sub> | MongoDB replica-set init was not idempotent, so a reused container hung against a one-hour timeout. [#1731](https://github.com/testcontainers/testcontainers-dotnet/pull/1731), [#1735](https://github.com/testcontainers/testcontainers-dotnet/pull/1735). A reused Couchbase container then stalled on the first step of configuring a cluster that was already configured. [#1736](https://github.com/testcontainers/testcontainers-dotnet/pull/1736) |
+| **[JasperFx/marten](https://github.com/JasperFx/marten)**<br><sub>★3.5k</sub> | `HardDeleteWhere` could not remove already soft-deleted rows, and returned cleanly either way. [#5215](https://github.com/JasperFx/marten/pull/5215), [#5202](https://github.com/JasperFx/marten/pull/5202), [#5240](https://github.com/JasperFx/marten/pull/5240). The parameterised `MatchesJsonPath` overload threw on every call, so no one could have been using it. [#5289](https://github.com/JasperFx/marten/pull/5289). The pgvector docs still described a recall cap the library had stopped applying, and the caveat that replaced it was wrong for hybrid search. [#5467](https://github.com/JasperFx/marten/pull/5467) |
+| **[JasperFx/jasperfx](https://github.com/JasperFx/jasperfx)**<br><sub>core library</sub> | The event loader claimed a ceiling it had never scanned, so a fully skipped batch could advance past events and lose them permanently. Reported on Marten, then fixed at the source. [#670](https://github.com/JasperFx/jasperfx/pull/670) |
 
 Most of these reports were fixed by the projects' own maintainers rather than by me, which is the part worth pointing at: the report carried enough evidence for someone else to act on it.
 
@@ -57,7 +67,7 @@ Sometimes the useful contribution is not a pull request. On [marten#5457](https:
 
 The open source is the visible half. The other half is client and product work, mostly in places where a wrong number is somebody's money or somebody's medical record.
 
-| | |
+| Area | What I built |
 |---|---|
 | **Financial systems** | A SaaS platform US financial institutions use to manage interest rate, FX and commodity derivatives. Designed a general ledger and a document management system from first principles, and built the star schema warehouse behind daily cashflow and hedge accounting reporting. Distributed services over RabbitMQ, SQS and SNS, on ECS and Fargate with infrastructure as code. |
 | **Case and document workflow** | ASP.NET Core and EF Core behind a React front end for a national dispute resolution body, handling case and document workflows. Azure Functions, App Services and Storage, with CI/CD on Azure DevOps. Also maintained and extended an Umbraco CMS platform, which is where the upstream contributions started. |
@@ -111,7 +121,7 @@ The deliverable is the report: each finding with where it is, what an attacker d
 
 #### .NET
 
-| Project | |
+| Project | What it does |
 |---|---|
 | **[Verdict](https://github.com/BaryoDev/Verdict)** | Result pattern with a zero-allocation core, eight packages. The allocation promise is the product, so it is enforced by benchmark rather than asserted in a README: 0 B and 0 collections measured over 1.6M operations on 8 threads. |
 | **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, thirteen packages at 2.2.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. |
@@ -120,14 +130,14 @@ The deliverable is the report: each finding with where it is, what an attacker d
 
 #### Umbraco
 
-| Project | |
+| Project | What it does |
 |---|---|
 | **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.0 on NuGet. |
 | **[umbraco-read-aloud](https://github.com/BaryoDev/umbraco-read-aloud)** | Read-aloud for an Umbraco site using Microsoft Edge neural TTS. |
 
 #### TypeScript and JavaScript
 
-| Project | |
+| Project | What it does |
 |---|---|
 | **[rnxjs](https://github.com/BaryoDev/rnxjs)** | Reactive UI framework. Bootstrap-native, no build step. Suite green on every pull request after four URL-sanitisation fixes and a CI gate that could not fail before. [Worked examples](https://github.com/BaryoDev/rnxJS_samples). |
 | **[Kapehan](https://github.com/BaryoDev/Kapehan)** | 42 hand-drawn coffee icons, MIT, plus a token-driven component sheet. The full-colour and `currentColor` mono builds come from the same geometry rather than being drawn twice. The CSS styles 34 component families against a 30-component manifest, and `npm test` asserts both counts and fails if either side gains an orphan. [Browse the set](https://baryodev.github.io/Kapehan/). |
@@ -140,7 +150,7 @@ The deliverable is the report: each finding with where it is, what an attacker d
 
 #### Go
 
-| Project | |
+| Project | What it does |
 |---|---|
 | **[BaryoVM](https://github.com/BaryoDev/BaryoVM)** | PaaS-style deploys onto your own cheap VMs. Agentless, over SSH, one binary. Every BaryoDev deploy goes through it, which is how its gaps get found. |
 | **[Baryo.CLI](https://github.com/BaryoDev/Baryo.CLI)** | Local AI chat on Docker Model Runner. Models run on your machine, no API keys, nothing leaves the laptop. |
@@ -151,7 +161,7 @@ The deliverable is the report: each finding with where it is, what an attacker d
 
 Mostly postmortems of my own mistakes, and decisions with the reasoning attached.
 
-| | |
+| Article | About |
 |---|---|
 | [My benchmark said my library was 2x faster. It was not.](https://baryodev.medium.com/my-benchmark-said-my-library-was-2x-faster-it-was-not-d6a6110bf354) | A performance gate that could not have failed for its own reason, and what it took to make it resolve what it reports |
 | [We built a modular CMS and deliberately did not make the modules plugins](https://baryodev.medium.com/we-built-a-modular-cms-and-deliberately-did-not-make-the-modules-plugins-66a30c79b1e5) | Runtime assembly loading forecloses Native AOT permanently, and a plugins folder is a place where writing a file runs code |
@@ -192,15 +202,17 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 
 ### Stack
 
-**Languages** C#, TypeScript, JavaScript, Go, SQL, Python for tooling
-**Architecture** Event sourcing and projections, multi-tenancy (conjoined and database-per-tenant), modular monoliths over plugin runtimes, API contracts and versioning, licensing and one-way-door calls
-**Backend** .NET Framework to .NET 10, ASP.NET Core and MVC, REST and GraphQL, EF Core and LINQ, microservices, event-driven and domain-driven design, CQRS-influenced design
-**Messaging** RabbitMQ, SQS, SNS, webhooks, background jobs
-**Data** PostgreSQL, SQL Server and Azure SQL, Marten, Redis, Oracle, DB2, star schema modelling, execution plan analysis and query tuning, SSIS and SSRS
-**Cloud and delivery** AWS (CDK, ECS, Fargate, SQS, SNS), Azure (Functions, App Services, Storage, SQL, DevOps), Oracle Cloud, Docker, Kubernetes, GitHub Actions, Octopus Deploy, OpenTelemetry, Sentry, SBOM
-**Frontend** React, Next.js, Angular, TypeScript, Razor, accessibility to WCAG
-**Testing** xUnit, NUnit, Moq, Testcontainers, Playwright, Vitest, BenchmarkDotNet, test-driven development, mutation testing, security scanning in CI
-**Security** OWASP Top 10 and CWE secure code review, access-control and IDOR analysis, OAuth 2.0, OIDC and JWT, secrets and dependency auditing, static-first with read-only verification
+| Area | Tools and practice |
+|---|---|
+| **Languages** | C#, TypeScript, JavaScript, Go, SQL, Python for tooling |
+| **Architecture** | Event sourcing and projections, multi-tenancy (conjoined and database-per-tenant), modular monoliths over plugin runtimes, API contracts and versioning, licensing and one-way-door calls |
+| **Backend** | .NET Framework to .NET 10, ASP.NET Core and MVC, REST and GraphQL, EF Core and LINQ, microservices, event-driven and domain-driven design, CQRS-influenced design |
+| **Messaging** | RabbitMQ, SQS, SNS, webhooks, background jobs |
+| **Data** | PostgreSQL, SQL Server and Azure SQL, Marten, Redis, Oracle, DB2, star schema modelling, execution plan analysis and query tuning, SSIS and SSRS |
+| **Cloud and delivery** | AWS (CDK, ECS, Fargate, SQS, SNS), Azure (Functions, App Services, Storage, SQL, DevOps), Oracle Cloud, Docker, Kubernetes, GitHub Actions, Octopus Deploy, OpenTelemetry, Sentry, SBOM |
+| **Frontend** | React, Next.js, Angular, TypeScript, Razor, accessibility to WCAG |
+| **Testing** | xUnit, NUnit, Moq, Testcontainers, Playwright, Vitest, BenchmarkDotNet, test-driven development, mutation testing, security scanning in CI |
+| **Security** | OWASP Top 10 and CWE secure code review, access-control and IDOR analysis, OAuth 2.0, OIDC and JWT, secrets and dependency auditing, static-first with read-only verification |
 
 ---
 
