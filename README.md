@@ -109,9 +109,14 @@ That took me from roughly **66 dollars of model use per change to about 25**, wi
 
 Proactive secure code review against the OWASP Top 10: read the code and config, find what an attacker would find, hand back a ranked fix list before anyone exploits it. Static-first, verified with read-only checks, no live offensive testing. The point is to close the holes ahead of the pen test, not to stage the attack.
 
+<details>
+<summary>What I look for, and what you get back</summary>
+
 What I look for: broken access control and IDOR (an id from the URL used to load or mutate another user's object with no ownership check), authorization mistaken for authentication (a logged-in check where an owner-or-admin check belonged), privilege escalation on write paths, ownership checks that run after the mutation instead of before, unauthenticated reads of private data, committed secrets and long-lived tokens, open redirects in login flows, and stored or reflected XSS from unsanitised user content.
 
 The deliverable is the report: each finding with where it is, what an attacker does with it, and the specific fix, ranked worst first, and an honest account of what was already secured. The same discipline as the rest of my work applies here: a finding I cannot trace to a concrete failure does not go in the report.
+
+</details>
 
 ---
 
@@ -190,6 +195,9 @@ AI-assisted daily, held to the same gates as everything else. The failure mode I
 
 Work that isn't writing the code, but decides whether the code was worth writing.
 
+<details>
+<summary>Triage, write-ups, reports, and working on systems that aren't mine</summary>
+
 A review that turns up twenty findings is a triage problem before it is a fixing problem. I sort them by what is already exposed or hard to undo, act on those, and let the rest wait. Fixing them in the order they were found buries the one that mattered.
 
 When something works twice I write down how, so it isn't luck the third time. barakoCMS ships a runbook for handing a project to a client, not just the product. The AI workflow has a script that measures cost per change, not a blog post about using AI.
@@ -197,6 +205,8 @@ When something works twice I write down how, so it isn't luck the third time. ba
 The reports are the work as much as the commits are. My upstream bug reports got fixed by other people because they carried enough to act on. My writing is mostly postmortems of my own mistakes. When you hand someone a report instead of a patch, whether they can act on it is the only thing that counts.
 
 Some of this touches systems and data that aren't mine. I stay inside what I'm authorised to do, read before I probe, and keep client specifics out of anything public. That is not politeness. It is why there is a next engagement.
+
+</details>
 
 ---
 
