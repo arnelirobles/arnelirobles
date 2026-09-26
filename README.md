@@ -97,7 +97,7 @@ The claims are gates rather than sentences. CI restores a backup, upgrades a 3.x
 
 ### Running agents over a backlog
 
-**[lean-agent-method](https://github.com/arnelirobles/lean-agent-method).** How I put AI coding agents through a real ticket backlog without burning a month of plan in one night, plus the script that measures cost per change.
+**[lean-agent](https://github.com/arnelirobles/lean-agent).** How I put AI coding agents through a real ticket backlog without burning a month of plan in one night, plus the script that measures cost per change.
 
 A cheaper model drafts every change. Scripts, not instructions, run the mechanical checks. A cheap critic reviews every change against six fixed questions, and the expensive model only sees what the critic cannot close. At most four changes in flight.
 
