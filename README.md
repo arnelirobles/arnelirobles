@@ -36,7 +36,7 @@ The decisions are the work. Event sourcing over CRUD and what that costs on the 
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="7 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-7-1f6feb?style=flat-square&logo=github"></a>
 <a href="https://github.com/BaryoDev"><img alt="30 public repositories" src="https://img.shields.io/badge/%40BaryoDev-30%20public%20repos-8957e5?style=flat-square&logo=github"></a>
 
-**Twelve merged fixes and seven accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. None came from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
+**Twelve merged fixes and seven accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
 | Project | What was wrong |
 |---|---|
