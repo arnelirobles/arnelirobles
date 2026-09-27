@@ -1,32 +1,91 @@
 <h1 align="center">Arnel Robles</h1>
 
 <p align="center">
-  <em>I design systems end to end, then run them in production.</em><br>
-  <a href="https://baryo.dev">baryo.dev</a> ·
-  <a href="https://github.com/BaryoDev">@BaryoDev</a> ·
-  <a href="https://baryodev.medium.com">writing</a> ·
-  <a href="mailto:arnelirobles@gmail.com">email</a>
+  <strong>I design and build the systems a business runs on, then keep them running.</strong><br>
+  <em>Multi-tenant platforms, the data underneath them, the AI on top, and the audit that checks it all holds.</em><br>
+  <sub>.NET and PostgreSQL · multi-tenant SaaS · LLM and agent systems · security audits · Philippines, fully remote since 2020</sub>
+</p>
+
+<p align="center">
+  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Email me" src="https://img.shields.io/badge/email-arnelirobles%40gmail.com-1f6feb?style=flat-square&logo=gmail&logoColor=white"></a>
+  <a href="https://baryo.dev"><img alt="baryo.dev" src="https://img.shields.io/badge/site-baryo.dev-8957e5?style=flat-square"></a>
+  <a href="https://baryodev.medium.com"><img alt="Writing" src="https://img.shields.io/badge/writing-medium-333?style=flat-square&logo=medium"></a>
 </p>
 
 <p align="center"><sub>
-  <a href="#open-source-contributor">Open source</a> ·
+  <a href="#the-platform-i-design-and-run">Platform</a> ·
+  <a href="#llm-and-agent-systems">LLM and agents</a> ·
+  <a href="#security-audits">Security audits</a> ·
+  <a href="#open-source-contributor">Upstream</a> ·
   <a href="#what-i-have-built-for-other-people">Client work</a> ·
-  <a href="#barakocms">barakoCMS</a> ·
-  <a href="#libraries-and-tooling">Libraries</a> ·
+  <a href="#libraries-and-tools">Libraries</a> ·
   <a href="#writing">Writing</a> ·
-  <a href="#how-i-work">How I work</a> ·
   <a href="#stack">Stack</a>
 </sub></p>
 
+> **You can contact me at [arnelirobles@gmail.com](mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub).**
+
 ---
 
-15 years in production software, most of it on systems where being wrong costs something: derivatives trading for US financial institutions, hospital, medical records and national health insurance systems, ERP and payroll, billing and cashiering.
+14 years in production software, most of it on systems where being wrong costs something: derivatives for US financial institutions, hospital and national health insurance systems, ERP and payroll. Remote since 2020, on teams in the US and New Zealand.
 
-The open source below is what I build when I get to choose the constraints. I design systems end to end and then run them: an event-sourced multi-tenant CMS, the deploy tooling it ships through, the libraries underneath it, and the front end on top. Strongest in .NET, though most of what I ship is not.
+In 30 seconds:
 
-The decisions are the work. Event sourcing over CRUD and what that costs on the read side. Modules compiled in rather than loaded at runtime, because a plugins folder is a place where writing a file runs code. One cheap VM instead of a platform, and what that trades away. Each of those is written up with the reasoning, not just the outcome.
+- **I design platforms.** [barakoCMS](https://github.com/BaryoDev/barakoCMS) is a multi-tenant, metadata-driven data platform on .NET and PostgreSQL, with its console, renderer, client and deploy tool, all public and all running.
+- **I ship LLM and agent systems** that respect permissions and get checked by something other than a person's say-so.
+- **I audit web applications** against OWASP WSTG and ASVS and hand back a report ranked by what to fix first.
+- **Thirteen fixes merged upstream** in Umbraco, Marten and Testcontainers, each for a bug my own projects hit.
 
-**[@BaryoDev](https://github.com/BaryoDev)** is 30 public repositories across C#, TypeScript, Go and JavaScript, all open source and self-hostable. No paid tier, no seat cap, no metered anything.
+---
+
+### The platform I design and run
+
+**[barakoCMS](https://github.com/BaryoDev/barakoCMS)** is an open-source data platform for .NET 10 on PostgreSQL. Customers define their own content types, fields, choice lists and references at runtime through the API, and tenant isolation, roles, field-level masking and audit apply to all of it. Event-sourced on Marten, so every change is on record. An event-driven workflow engine, 13 opt-in modules, and about 1,900 test methods run against real PostgreSQL and MinIO through Testcontainers. MPL-2.0, currently 4.4.1.
+
+The decisions are the work. Event sourcing over CRUD, and what that costs on the read side. Modules compiled in rather than loaded at runtime, because a plugins folder is a place where writing a file runs code. One cheap VM instead of a platform, and what that trades away. Each is written up with the reasoning, not just the outcome.
+
+The rest of the platform, all public:
+
+| Piece | What it does |
+|---|---|
+| **[barakoBrew](https://github.com/BaryoDev/barakoBrew)** | The console: design content types, roles, workflows and integrations against the API. Next.js and TypeScript. |
+| **[barakoPress](https://github.com/BaryoDev/barakoPress)** | The renderer: pages from blocks, collections and docs trees, server rendered and cached per tenant until the CMS says otherwise. [baryo.dev](https://baryo.dev) runs on it. |
+| **[barako-client](https://github.com/BaryoDev/barako-client)** | Typed TypeScript client. API key or JWT, tenant-aware, isomorphic. |
+| **[create-barako-app](https://github.com/arnelirobles/create-barako-app)** | `npm create barako-app` gives you a Next.js project with the API, console and renderer in docker compose, seeded content and sign-in already working. |
+| **[BaryoVM](https://github.com/BaryoDev/BaryoVM)** | PaaS-style deploys onto your own cheap VMs. Agentless, over SSH, one Go binary. Every BaryoDev deploy goes through it, which is how its gaps get found. |
+
+**Live** at [playground.baryo.dev/barakocms](https://playground.baryo.dev/barakocms).
+
+---
+
+### LLM and agent systems
+
+| Project | What it does |
+|---|---|
+| **[barakoCMS AI](https://github.com/BaryoDev/barakoCMS)** | Semantic search over tenant content with a self-hosted embedding model, no third-party key. It indexes only public fields and re-checks every result as published and public at query time, so retrieval cannot return what the caller could not read. |
+| **[Baryo CLI](https://github.com/BaryoDev/Baryo.CLI)** | An agent CLI in Go for local models (Ollama, Docker Model Runner) and 18+ cloud providers. Tool calling with file, shell and git tools, an MCP client, and permission modes that ask before a destructive tool runs. Most of the work went into failure paths: MCP tools that skipped the permission gate, and a failed context compaction that silently overwrote the conversation. |
+| **[lean-agent](https://github.com/arnelirobles/lean-agent)** | How I run AI coding agents over a real ticket backlog, packaged as a Claude Code plugin. A cheap model drafts, scripts run the mechanical checks, a cheap critic reviews against six fixed questions, and the expensive model only sees what the critic cannot close. That took me from about **66 dollars of model use per change to about 25**, measured by a script that prices every change from the agent transcripts. My numbers, one .NET codebase, list prices. |
+
+---
+
+### Security audits
+
+I audit web applications end to end and hand back a report a team can act on. The method was built on my own stack first, barakoCMS with its console and renderer exactly as deployed, before I would point it at anyone else's.
+
+- **Source review of what is actually deployed**, pinned to the running commits rather than the branch tip.
+- **Non-destructive checks against production.** GET and HEAD only, no accounts created, nothing written.
+- **Anything that needs a signed-in user or a write runs on a local copy** built from the production images and the production proxy config, on loopback only.
+- **A test catalogue mapped to OWASP WSTG and ASVS**, each test with an honest status: built, partial, broken or missing. The report says what was not checked as plainly as what was.
+- **Each finding** comes with its CWE, where it is, what an attacker does with it, the specific fix, the order to fix in, and a script that reruns it once the fix lands.
+
+The part most audits skip: checking the checks. On my own stack that meant finding scripts that went green without proving anything, and fixing those before writing new ones.
+
+<details>
+<summary>What I look for</summary>
+
+Broken access control and IDOR (an id from the URL used to load or mutate another user's object with no ownership check), authorization mistaken for authentication, privilege escalation on write paths and across tenants, ownership checks that run after the mutation instead of before, unauthenticated reads of private data, stored and reflected XSS including what a markdown renderer lets through, clickjacking, token storage and session revocation, committed secrets and long-lived tokens, open redirects in login flows, and header and proxy trust. A finding I cannot trace to a concrete failure does not go in the report.
+
+</details>
 
 ---
 
@@ -34,7 +93,7 @@ The decisions are the work. Event sourcing over CRUD and what that costs on the 
 
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="13 merged upstream" src="https://img.shields.io/badge/upstream-13%20merged-2ea44f?style=flat-square&logo=github"></a>
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="8 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-8-1f6feb?style=flat-square&logo=github"></a>
-<a href="https://github.com/BaryoDev"><img alt="30 public repositories" src="https://img.shields.io/badge/%40BaryoDev-30%20public%20repos-8957e5?style=flat-square&logo=github"></a>
+<a href="https://github.com/BaryoDev"><img alt="29 public repositories" src="https://img.shields.io/badge/%40BaryoDev-29%20public%20repos-8957e5?style=flat-square&logo=github"></a>
 
 **Thirteen merged fixes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
@@ -81,84 +140,39 @@ Fully remote, across distributed teams in several time zones. Alongside the buil
 
 ---
 
-### barakoCMS
+### Libraries and tools
 
-**[Open-source headless CMS for .NET](https://github.com/BaryoDev/barakoCMS).** Event-sourced on Marten and PostgreSQL, multi-tenant, user-defined content schemas, 13 opt-in modules, an event-triggered workflow engine, and a Next.js admin UI.
-
-127 endpoints and 2,284 tests, run against real PostgreSQL and MinIO through Testcontainers. On .NET 10 and Marten 9. MPL-2.0, and every module is included rather than sold separately.
-
-**4.0.0 shipped in September 2026** to NuGet, GHCR and Docker Hub: four auth and file-access holes closed, GDPR erasure, tenancy resolved from a domain, content references, multi-architecture non-root images, an SBOM, and a WCAG pass.
-
-The claims are gates rather than sentences. CI restores a backup, upgrades a 3.x database, applies the Kubernetes manifests, generates the SBOM, scaffolds a module from the template and builds it, resolves every compose file, and refuses an image tag that is amd64-only.
-
-**Live** at [playground.baryo.dev/barakocms](https://playground.baryo.dev/barakocms). **Console:** [barakoBrew](https://github.com/BaryoDev/barakoBrew), for designing content types, roles, workflows and integrations against the API. **Typed client:** [barako-client](https://github.com/BaryoDev/barako-client). [baryo.dev](https://baryo.dev) itself is rendered from it.
-
----
-
-### Running agents over a backlog
-
-**[lean-agent](https://github.com/arnelirobles/lean-agent).** How I put AI coding agents through a real ticket backlog without burning a month of plan in one night, plus the script that measures cost per change.
-
-A cheaper model drafts every change. Scripts, not instructions, run the mechanical checks. A cheap critic reviews every change against six fixed questions, and the expensive model only sees what the critic cannot close. At most four changes in flight.
-
-That took me from roughly **66 dollars of model use per change to about 25**, with no drop in what got caught. Those are my numbers, at list prices, on one .NET codebase, so treat them as a shape rather than a benchmark. The method and the measuring script are both in the repo.
-
----
-
-### Security review
-
-Proactive secure code review against the OWASP Top 10: read the code and config, find what an attacker would find, hand back a ranked fix list before anyone exploits it. Static-first, verified with read-only checks, no live offensive testing. The point is to close the holes ahead of the pen test, not to stage the attack.
-
-<details>
-<summary>What I look for, and what you get back</summary>
-
-What I look for: broken access control and IDOR (an id from the URL used to load or mutate another user's object with no ownership check), authorization mistaken for authentication (a logged-in check where an owner-or-admin check belonged), privilege escalation on write paths, ownership checks that run after the mutation instead of before, unauthenticated reads of private data, committed secrets and long-lived tokens, open redirects in login flows, and stored or reflected XSS from unsanitised user content.
-
-The deliverable is the report: each finding with where it is, what an attacker does with it, and the specific fix, ranked worst first, and an honest account of what was already secured. The same discipline as the rest of my work applies here: a finding I cannot trace to a concrete failure does not go in the report.
-
-</details>
-
----
-
-### Libraries and tooling
-
-30 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
+29 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
 
 #### .NET
 
 | Project | What it does |
 |---|---|
-| **[Verdict](https://github.com/BaryoDev/Verdict)** | Result pattern with a zero-allocation core, eight packages. The allocation promise is the product, so it is enforced by benchmark rather than asserted in a README: 0 B and 0 collections measured over 1.6M operations on 8 threads. |
-| **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, thirteen packages at 2.2.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. |
-| **[Carom](https://github.com/BaryoDev/Carom)** | Resilience: retry, timeout, circuit breaker, bulkhead, rate limiting, fallback, hedging. Zero dependencies in the core, netstandard2.0 upward, seven packages, 503 tests run against both .NET 8 and .NET 10. |
+| **[Verdict](https://github.com/BaryoDev/Verdict)** | Result pattern with a zero-allocation core, 3.0.0. The allocation promise is the product, so it is enforced by benchmark rather than asserted in a README: 0 B and 0 collections measured over 1.6M operations on 8 threads. |
+| **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, thirteen packages at 2.3.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. [Side-by-side sample](https://github.com/arnelirobles/mapsicle_samples). |
+| **[Carom](https://github.com/BaryoDev/Carom)** | Resilience: retry, timeout, circuit breaker, bulkhead, rate limiting, fallback, hedging. Zero dependencies in the core, netstandard2.0 upward. |
 | **[Talaan](https://github.com/BaryoDev/Talaan)** | Spreadsheet and CSV reader, xlsx and CSV, zero dependencies. barakoCMS consumes it as a published package rather than a project reference, so the packaging is exercised for real. |
-
-#### Umbraco
-
-| Project | What it does |
-|---|---|
-| **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.0 on NuGet. |
-| **[umbraco-read-aloud](https://github.com/BaryoDev/umbraco-read-aloud)** | Read-aloud for an Umbraco site using Microsoft Edge neural TTS. |
+| **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.1 on NuGet. |
+| **[umbraco-read-aloud](https://github.com/BaryoDev/umbraco-read-aloud)** | Read-aloud for an Umbraco site using Microsoft Edge neural voices. |
 
 #### TypeScript and JavaScript
 
 | Project | What it does |
 |---|---|
-| **[rnxjs](https://github.com/BaryoDev/rnxjs)** | Reactive UI framework. Bootstrap-native, no build step. Suite green on every pull request after four URL-sanitisation fixes and a CI gate that could not fail before. [Worked examples](https://github.com/BaryoDev/rnxJS_samples). |
-| **[Kapehan](https://github.com/BaryoDev/Kapehan)** | 42 hand-drawn coffee icons, MIT, plus a token-driven component sheet. The full-colour and `currentColor` mono builds come from the same geometry rather than being drawn twice. The CSS styles 34 component families against a 30-component manifest, and `npm test` asserts both counts and fails if either side gains an orphan. [Browse the set](https://baryodev.github.io/Kapehan/). |
+| **[rnxjs](https://github.com/BaryoDev/rnxjs)** | 46 components for Django, Rails and Laravel templates. One script tag, no build step. [Worked examples](https://github.com/BaryoDev/rnxJS_samples). |
 | **[rnxORM](https://github.com/BaryoDev/rnxORM)** | Node.js ORM, integration-tested against PostgreSQL, SQL Server and MariaDB rather than mocked. |
-| **[pwa-kit](https://github.com/BaryoDev/pwa-kit)** | Install prompt for Android and iOS, a network-first service worker, and the helpers around them. |
+| **[Kapehan](https://github.com/BaryoDev/Kapehan)** | 42 hand-drawn coffee icons, MIT. Full-colour and `currentColor` builds come from the same geometry, and `npm test` fails if the CSS and the component manifest drift apart. [Browse the set](https://baryodev.github.io/Kapehan/). |
 | **[read-aloud](https://github.com/BaryoDev/read-aloud)** | Read-aloud for any site. Headless controller, web component, word highlighting. |
-| **[feed-slurp](https://github.com/BaryoDev/feed-slurp)** | RSS and Atom fetching in the browser. |
-| **[dopaminejs](https://github.com/BaryoDev/dopaminejs)** | Game feel engine: juice, rewards and feedback for HTML5 games. [Built with it](https://github.com/BaryoDev/dopa-dopa). |
-| **[BaryoDev.Libraries.JavaScript](https://github.com/BaryoDev/BaryoDev.Libraries.JavaScript)** | Zero-dependency TypeScript utilities on npm. |
+| **[pwa-kit](https://github.com/BaryoDev/pwa-kit)** | Install prompt for Android and iOS, a network-first service worker, and the helpers around them. |
+| **[dopaminejs](https://github.com/BaryoDev/dopaminejs)** | Progression mechanics for web apps: XP, levels, achievements and timezone-correct daily streaks. |
 
-#### Go
+#### Tools I use every day
 
-| Project | What it does |
+| Tool | What it does |
 |---|---|
-| **[BaryoVM](https://github.com/BaryoDev/BaryoVM)** | PaaS-style deploys onto your own cheap VMs. Agentless, over SSH, one binary. Every BaryoDev deploy goes through it, which is how its gaps get found. |
-| **[Baryo.CLI](https://github.com/BaryoDev/Baryo.CLI)** | Local AI chat on Docker Model Runner. Models run on your machine, no API keys, nothing leaves the laptop. |
+| **gh-ci-local** <sub>private</sub> | A GitHub CLI extension that runs a repository's Actions jobs on your own machine, for repos where Actions is off or the minutes ran out. Stops at the first failing step and exits non-zero. |
+| **provstrip** <sub>private</sub> | Strips provenance metadata from PNG and SVG without re-encoding, in Rust. It splices rather than rewrites, and the tests assert the kept bytes are identical to the input. |
+| **[fastendpoints-wolverine-lab](https://github.com/arnelirobles/fastendpoints-wolverine-lab)** | One operation written twice, on FastEndpoints and on Wolverine, against the same Marten database. The companion to a write-up comparing them. |
 
 ---
 
@@ -189,14 +203,9 @@ Tests that cannot fail are the defect I look for first: a mock returning what th
 
 AI-assisted daily, held to the same gates as everything else. The failure mode I design against is a green suite that proves nothing, which is why the mechanical checks are scripts and every change gets a critic before it gets an expensive model.
 
----
-
-### Beyond the code
-
-Work that isn't writing the code, but decides whether the code was worth writing.
-
 <details>
-<summary>Triage, write-ups, reports, and working on systems that aren't mine</summary>
+<summary>Beyond the code: triage, write-ups, reports, and working on systems that aren't mine</summary>
+
 
 A review that turns up twenty findings is a triage problem before it is a fixing problem. I sort them by what is already exposed or hard to undo, act on those, and let the rest wait. Fixing them in the order they were found buries the one that mattered.
 
@@ -214,7 +223,7 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 
 | Area | Tools and practice |
 |---|---|
-| **Languages** | C#, TypeScript, JavaScript, Go, SQL, Python for tooling |
+| **Languages** | C#, TypeScript, JavaScript, Go, SQL, Python and Rust for tooling |
 | **Architecture** | Event sourcing and projections, multi-tenancy (conjoined and database-per-tenant), modular monoliths over plugin runtimes, API contracts and versioning, licensing and one-way-door calls |
 | **Backend** | .NET Framework to .NET 10, ASP.NET Core and MVC, REST and GraphQL, EF Core and LINQ, microservices, event-driven and domain-driven design, CQRS-influenced design |
 | **Messaging** | RabbitMQ, SQS, SNS, webhooks, background jobs |
@@ -222,8 +231,12 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 | **Cloud and delivery** | AWS (CDK, ECS, Fargate, SQS, SNS), Azure (Functions, App Services, Storage, SQL, DevOps), Oracle Cloud, Docker, Kubernetes, GitHub Actions, Octopus Deploy, OpenTelemetry, Sentry, SBOM |
 | **Frontend** | React, Next.js, Angular, TypeScript, Razor, accessibility to WCAG |
 | **Testing** | xUnit, NUnit, Moq, Testcontainers, Playwright, Vitest, BenchmarkDotNet, test-driven development, mutation testing, security scanning in CI |
+| **AI and agents** | Claude and the Anthropic API, tool calling and MCP, embeddings and semantic search, local models on Ollama and Docker Model Runner |
 | **Security** | OWASP Top 10 and CWE secure code review, access-control and IDOR analysis, OAuth 2.0, OIDC and JWT, secrets and dependency auditing, static-first with read-only verification |
 
 ---
 
-📫 [arnelirobles@gmail.com](mailto:arnelirobles@gmail.com) · 🌐 [baryo.dev](https://baryo.dev) · ✍️ [baryodev.medium.com](https://baryodev.medium.com)
+<p align="center">
+  You can contact me at any of these.<br>
+  📫 <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub">arnelirobles@gmail.com</a> · 🌐 <a href="https://baryo.dev">baryo.dev</a> · ✍️ <a href="https://baryodev.medium.com">baryodev.medium.com</a>
+</p>
