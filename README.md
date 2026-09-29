@@ -40,7 +40,7 @@ In 30 seconds:
 
 ### The platform I design and run
 
-**[barakoCMS](https://github.com/BaryoDev/barakoCMS)** is an open-source data platform for .NET 10 on PostgreSQL. Customers define their own content types, fields, choice lists and references at runtime through the API, and tenant isolation, roles, field-level masking and audit apply to all of it. Event-sourced on Marten, so every change is on record. An event-driven workflow engine, 13 opt-in modules, and about 1,900 test methods run against real PostgreSQL and MinIO through Testcontainers. MPL-2.0, currently 4.4.1.
+**[barakoCMS](https://github.com/BaryoDev/barakoCMS)** is an open-source data platform for .NET 10 on PostgreSQL. Customers define their own content types, fields, choice lists and references at runtime through the API, and tenant isolation, roles, field-level masking and audit apply to all of it. Event-sourced on Marten, so every change is on record. An event-driven workflow engine, 15 opt-in modules, and about 2,050 test methods (3,009 test cases) run against real PostgreSQL and MinIO through Testcontainers. MPL-2.0, currently 4.4.1.
 
 The decisions are the work. Event sourcing over CRUD, and what that costs on the read side. Modules compiled in rather than loaded at runtime, because a plugins folder is a place where writing a file runs code. One cheap VM instead of a platform, and what that trades away. Each is written up with the reasoning, not just the outcome.
 
@@ -49,7 +49,7 @@ The rest of the platform, all public:
 | Piece | What it does |
 |---|---|
 | **[barakoBrew](https://github.com/BaryoDev/barakoBrew)** | The console: design content types, roles, workflows and integrations against the API. Next.js and TypeScript. |
-| **[barakoPress](https://github.com/BaryoDev/barakoPress)** | The renderer: pages from blocks, collections and docs trees, server rendered and cached per tenant until the CMS says otherwise. [baryo.dev](https://baryo.dev) runs on it. |
+| **[barakoPress](https://github.com/BaryoDev/barakoPress)** | The renderer: pages from blocks, collections and docs trees, server rendered and cached per tenant until the CMS says otherwise. [barakocms.com](https://barakocms.com) runs on it. |
 | **[barako-client](https://github.com/BaryoDev/barako-client)** | Typed TypeScript client. API key or JWT, tenant-aware, isomorphic. |
 | **[create-barako-app](https://github.com/arnelirobles/create-barako-app)** | `npm create barako-app` gives you a Next.js project with the API, console and renderer in docker compose, seeded content and sign-in already working. |
 | **[BaryoVM](https://github.com/BaryoDev/BaryoVM)** | PaaS-style deploys onto your own cheap VMs. Agentless, over SSH, one Go binary. Every BaryoDev deploy goes through it, which is how its gaps get found. |
@@ -64,7 +64,7 @@ The rest of the platform, all public:
 |---|---|
 | **[barakoCMS AI](https://github.com/BaryoDev/barakoCMS)** | Semantic search over tenant content with a self-hosted embedding model, no third-party key. It indexes only public fields and re-checks every result as published and public at query time, so retrieval cannot return what the caller could not read. |
 | **[Baryo CLI](https://github.com/BaryoDev/Baryo.CLI)** | An agent CLI in Go for local models (Ollama, Docker Model Runner) and 18+ cloud providers. Tool calling with file, shell and git tools, an MCP client, and permission modes that ask before a destructive tool runs. Most of the work went into failure paths: MCP tools that skipped the permission gate, and a failed context compaction that silently overwrote the conversation. |
-| **[lean-agent](https://github.com/arnelirobles/lean-agent)** | How I run AI coding agents over a real ticket backlog, packaged as a Claude Code plugin. A cheap model drafts, scripts run the mechanical checks, a cheap critic reviews against six fixed questions, and the expensive model only sees what the critic cannot close. That took me from about **66 dollars of model use per change to about 25**, measured by a script that prices every change from the agent transcripts. My numbers, one .NET codebase, list prices. |
+| **[lean-agent](https://github.com/arnelirobles/lean-agent)** | How I run AI coding agents over a real ticket backlog, packaged as a Claude Code plugin. I now run it as one session on one model: it drafts, scripts run the mechanical checks, then it reviews its own change against six fixed questions in two passes, one to find problems and one to refute them. A finding not fixed in two rounds comes to me. The cascade mode is still in the plugin (a cheap model drafts and critiques, the expensive one sees only what the critic cannot close), and it took me from about **66 dollars of model use per change to about 25**, measured from the agent transcripts. My numbers, one .NET codebase, list prices. |
 
 ---
 
@@ -93,13 +93,13 @@ Broken access control and IDOR (an id from the URL used to load or mutate anothe
 
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="14 merged upstream" src="https://img.shields.io/badge/upstream-14%20merged-2ea44f?style=flat-square&logo=github"></a>
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="8 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-8-1f6feb?style=flat-square&logo=github"></a>
-<a href="https://github.com/BaryoDev"><img alt="29 public repositories" src="https://img.shields.io/badge/%40BaryoDev-29%20public%20repos-8957e5?style=flat-square&logo=github"></a>
+<a href="https://github.com/BaryoDev"><img alt="30 public repositories" src="https://img.shields.io/badge/%40BaryoDev-30%20public%20repos-8957e5?style=flat-square&logo=github"></a>
 
 **Fourteen merged changes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
 | Project | What was wrong |
 |---|---|
-| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.2k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2 |
+| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.3k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2 |
 | **[testcontainers/testcontainers-dotnet](https://github.com/testcontainers/testcontainers-dotnet)**<br><sub>★4.4k</sub> | MongoDB replica-set init was not idempotent, so a reused container hung against a one-hour timeout. [#1731](https://github.com/testcontainers/testcontainers-dotnet/pull/1731), [#1735](https://github.com/testcontainers/testcontainers-dotnet/pull/1735). A reused Couchbase container then stalled on the first step of configuring a cluster that was already configured. [#1736](https://github.com/testcontainers/testcontainers-dotnet/pull/1736). Confluent Platform 8.x images exited on startup because the module left a trailing comma in the advertised listeners, which Kafka 4 rejects. [#1772](https://github.com/testcontainers/testcontainers-dotnet/pull/1772). With that fixed, they still defaulted to ZooKeeper, which 8.x removed. [#1775](https://github.com/testcontainers/testcontainers-dotnet/pull/1775). The docs never said how builder calls combine, so setting your own startup callback on a module silently replaced its provisioning, and MongoDB never initiated its replica set. [#1770](https://github.com/testcontainers/testcontainers-dotnet/pull/1770) documents the rules on a page of their own |
 | **[JasperFx/marten](https://github.com/JasperFx/marten)**<br><sub>★3.5k</sub> | `HardDeleteWhere` could not remove already soft-deleted rows, and returned cleanly either way. [#5215](https://github.com/JasperFx/marten/pull/5215), [#5202](https://github.com/JasperFx/marten/pull/5202), [#5240](https://github.com/JasperFx/marten/pull/5240). The parameterised `MatchesJsonPath` overload threw on every call, so no one could have been using it. [#5289](https://github.com/JasperFx/marten/pull/5289). The pgvector docs still described a recall cap the library had stopped applying, and the caveat that replaced it was wrong for hybrid search. [#5467](https://github.com/JasperFx/marten/pull/5467) |
 | **[JasperFx/jasperfx](https://github.com/JasperFx/jasperfx)**<br><sub>core library</sub> | The event loader claimed a ceiling it had never scanned, so a fully skipped batch could advance past events and lose them permanently. Reported on Marten, then fixed at the source. [#670](https://github.com/JasperFx/jasperfx/pull/670) |
@@ -142,14 +142,14 @@ Fully remote, across distributed teams in several time zones. Alongside the buil
 
 ### Libraries and tools
 
-29 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
+30 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
 
 #### .NET
 
 | Project | What it does |
 |---|---|
 | **[Verdict](https://github.com/BaryoDev/Verdict)** | Result pattern with a zero-allocation core, 3.0.0. The allocation promise is the product, so it is enforced by benchmark rather than asserted in a README: 0 B and 0 collections measured over 1.6M operations on 8 threads. |
-| **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, thirteen packages at 2.3.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. [Side-by-side sample](https://github.com/arnelirobles/mapsicle_samples). |
+| **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, fourteen packages at 2.4.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. [Side-by-side sample](https://github.com/arnelirobles/mapsicle_samples). |
 | **[Carom](https://github.com/BaryoDev/Carom)** | Resilience: retry, timeout, circuit breaker, bulkhead, rate limiting, fallback, hedging. Zero dependencies in the core, netstandard2.0 upward. |
 | **[Talaan](https://github.com/BaryoDev/Talaan)** | Spreadsheet and CSV reader, xlsx and CSV, zero dependencies. barakoCMS consumes it as a published package rather than a project reference, so the packaging is exercised for real. |
 | **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.1 on NuGet. |
