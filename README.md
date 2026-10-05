@@ -10,6 +10,7 @@
   <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Email me" src="https://img.shields.io/badge/email-arnelirobles%40gmail.com-1f6feb?style=flat-square&logo=gmail&logoColor=white"></a>
   <a href="https://baryo.dev"><img alt="baryo.dev" src="https://img.shields.io/badge/site-baryo.dev-8957e5?style=flat-square"></a>
   <a href="https://baryodev.medium.com"><img alt="Writing" src="https://img.shields.io/badge/writing-medium-333?style=flat-square&logo=medium"></a>
+  <a href="https://huggingface.co/arnelirobles"><img alt="Hugging Face" src="https://img.shields.io/badge/models-hugging%20face-ffcc4d?style=flat-square&logo=huggingface&logoColor=black"></a>
 </p>
 
 <p align="center"><sub>
@@ -65,6 +66,7 @@ The rest of the platform, all public:
 | **[barakoCMS AI](https://github.com/BaryoDev/barakoCMS)** | Semantic search over tenant content with a self-hosted embedding model, no third-party key. It indexes only public fields and re-checks every result as published and public at query time, so retrieval cannot return what the caller could not read. |
 | **[Baryo CLI](https://github.com/BaryoDev/Baryo.CLI)** | An agent CLI in Go for local models (Ollama, Docker Model Runner) and 18+ cloud providers. Tool calling with file, shell and git tools, an MCP client, and permission modes that ask before a destructive tool runs. Most of the work went into failure paths: MCP tools that skipped the permission gate, and a failed context compaction that silently overwrote the conversation. |
 | **[lean-agent](https://github.com/arnelirobles/lean-agent)** | How I run AI coding agents over a real ticket backlog, packaged as a Claude Code plugin. I now run it as one session on one model: it drafts, scripts run the mechanical checks, then it reviews its own change against six fixed questions in two passes, one to find problems and one to refute them. A finding not fixed in two rounds comes to me. The cascade mode is still in the plugin (a cheap model drafts and critiques, the expensive one sees only what the critic cannot close), and it took me from about **66 dollars of model use per change to about 25**, measured from the agent transcripts. My numbers, one .NET codebase, list prices. |
+| **[Abogado](https://huggingface.co/arnelirobles/abogado)** | A Philippine law assistant in English and Tagalog, published on Hugging Face. Qwen2.5-3B-Instruct fine-tuned with QLoRA on a Kaggle T4, with a [GGUF build](https://huggingface.co/arnelirobles/abogado-gguf) to run it locally. A small first version, 106 question and answer pairs from the 1987 Constitution. It refuses requests for private data and points people to a real lawyer instead of playing one. Apache-2.0. |
 
 ---
 
@@ -132,7 +134,7 @@ The open source is the visible half. The other half is client and product work, 
 | **Case and document workflow** | ASP.NET Core and EF Core behind a React front end for a national dispute resolution body, handling case and document workflows. Azure Functions, App Services and Storage, with CI/CD on Azure DevOps. Also maintained and extended an Umbraco CMS platform, which is where the upstream contributions started. |
 | **Gaming management and analytics** | Led the early build of a casino management and analytics platform on .NET, React and SQL Server, running the development and QA teams and owning the release pipelines. |
 | **Enterprise and healthcare integration** | .NET and Java integrations across ERP, financial, materials and payroll systems at a large agribusiness, plus hospital and national health insurance systems. SOAP and XML services, SSIS between AS400 DB2 and SQL Server, and AS400 administration at 24/7 availability. |
-| **Independent client delivery** | Feature and defect delivery across established codebases, a high-throughput API gateway with 15+ third-party integrations, and third-line escalation on a platform with a large organisational customer base. Took a production application from .NET 8 to .NET 10 with its ORM and test framework, 651 tests passing. |
+| **Independent client delivery** | Feature and defect delivery across established codebases, middleware, third-party and Stripe payment integrations in JavaScript for a client platform. Took a production application from .NET 8 to .NET 10 with its ORM and test framework, 651 tests passing. |
 
 Modernisation is a thread through most of it: ASP.NET MVC and AngularJS onto current .NET with the business running throughout, VB6 rebuilt on ASP.NET Core, and a large Oracle schema moved to PostgreSQL behind a live application to remove the licensing cost.
 
