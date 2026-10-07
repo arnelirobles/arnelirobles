@@ -35,7 +35,7 @@ In 30 seconds:
 - **I design platforms.** [barakoCMS](https://github.com/BaryoDev/barakoCMS) is a multi-tenant, metadata-driven data platform on .NET and PostgreSQL, with its console, renderer, client and deploy tool, all public and all running.
 - **I ship LLM and agent systems** that respect permissions and get checked by something other than a person's say-so.
 - **I audit web applications** against OWASP WSTG and ASVS and hand back a report ranked by what to fix first.
-- **Fourteen changes merged upstream** in Umbraco, Marten and Testcontainers, nearly all for a bug my own projects hit.
+- **Fifteen changes merged upstream** in Umbraco, Marten and Testcontainers, nearly all for a bug my own projects hit.
 
 ---
 
@@ -93,15 +93,15 @@ Broken access control and IDOR (an id from the URL used to load or mutate anothe
 
 ### Open source contributor
 
-<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="14 merged upstream" src="https://img.shields.io/badge/upstream-14%20merged-2ea44f?style=flat-square&logo=github"></a>
+<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="15 merged upstream" src="https://img.shields.io/badge/upstream-15%20merged-2ea44f?style=flat-square&logo=github"></a>
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="8 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-8-1f6feb?style=flat-square&logo=github"></a>
 <a href="https://github.com/BaryoDev"><img alt="30 public repositories" src="https://img.shields.io/badge/%40BaryoDev-30%20public%20repos-8957e5?style=flat-square&logo=github"></a>
 
-**Fourteen merged changes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
+**Fifteen merged changes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
 | Project | What was wrong |
 |---|---|
-| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.3k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2 |
+| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.3k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2. A disabled or locked out user kept a valid back-office cookie, so they were issued fresh tokens and landed in an empty back office where every call returned 403 and there was no way to log out. [#23995](https://github.com/umbraco/Umbraco-CMS/pull/23995) signs them out instead, queued for 17.8 and 18.3 |
 | **[testcontainers/testcontainers-dotnet](https://github.com/testcontainers/testcontainers-dotnet)**<br><sub>★4.4k</sub> | MongoDB replica-set init was not idempotent, so a reused container hung against a one-hour timeout. [#1731](https://github.com/testcontainers/testcontainers-dotnet/pull/1731), [#1735](https://github.com/testcontainers/testcontainers-dotnet/pull/1735). A reused Couchbase container then stalled on the first step of configuring a cluster that was already configured. [#1736](https://github.com/testcontainers/testcontainers-dotnet/pull/1736). Confluent Platform 8.x images exited on startup because the module left a trailing comma in the advertised listeners, which Kafka 4 rejects. [#1772](https://github.com/testcontainers/testcontainers-dotnet/pull/1772). With that fixed, they still defaulted to ZooKeeper, which 8.x removed. [#1775](https://github.com/testcontainers/testcontainers-dotnet/pull/1775). The docs never said how builder calls combine, so setting your own startup callback on a module silently replaced its provisioning, and MongoDB never initiated its replica set. [#1770](https://github.com/testcontainers/testcontainers-dotnet/pull/1770) documents the rules on a page of their own |
 | **[JasperFx/marten](https://github.com/JasperFx/marten)**<br><sub>★3.5k</sub> | `HardDeleteWhere` could not remove already soft-deleted rows, and returned cleanly either way. [#5215](https://github.com/JasperFx/marten/pull/5215), [#5202](https://github.com/JasperFx/marten/pull/5202), [#5240](https://github.com/JasperFx/marten/pull/5240). The parameterised `MatchesJsonPath` overload threw on every call, so no one could have been using it. [#5289](https://github.com/JasperFx/marten/pull/5289). The pgvector docs still described a recall cap the library had stopped applying, and the caveat that replaced it was wrong for hybrid search. [#5467](https://github.com/JasperFx/marten/pull/5467) |
 | **[JasperFx/jasperfx](https://github.com/JasperFx/jasperfx)**<br><sub>core library</sub> | The event loader claimed a ceiling it had never scanned, so a fully skipped batch could advance past events and lose them permanently. Reported on Marten, then fixed at the source. [#670](https://github.com/JasperFx/jasperfx/pull/670) |
@@ -151,10 +151,10 @@ Fully remote, across distributed teams in several time zones. Alongside the buil
 | Project | What it does |
 |---|---|
 | **[Verdict](https://github.com/BaryoDev/Verdict)** | Result pattern with a zero-allocation core, 3.0.0. The allocation promise is the product, so it is enforced by benchmark rather than asserted in a README: 0 B and 0 collections measured over 1.6M operations on 8 threads. |
-| **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, fourteen packages at 2.4.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. [Side-by-side sample](https://github.com/arnelirobles/mapsicle_samples). |
+| **[Mapsicle](https://github.com/BaryoDev/Mapsicle)** | Object mapping, fourteen packages at 2.5.0, one test project per integration. Benchmarked on x64 and arm64 against AutoMapper and Mapperly, and the published numbers say where it loses as well as where it wins. [Side-by-side sample](https://github.com/arnelirobles/mapsicle_samples). |
 | **[Carom](https://github.com/BaryoDev/Carom)** | Resilience: retry, timeout, circuit breaker, bulkhead, rate limiting, fallback, hedging. Zero dependencies in the core, netstandard2.0 upward. |
 | **[Talaan](https://github.com/BaryoDev/Talaan)** | Spreadsheet and CSV reader, xlsx and CSV, zero dependencies. barakoCMS consumes it as a published package rather than a project reference, so the packaging is exercised for real. |
-| **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.1 on NuGet. |
+| **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.2 on NuGet. |
 | **[umbraco-read-aloud](https://github.com/BaryoDev/umbraco-read-aloud)** | Read-aloud for an Umbraco site using Microsoft Edge neural voices. |
 
 #### TypeScript and JavaScript
