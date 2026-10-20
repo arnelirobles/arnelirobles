@@ -1,16 +1,14 @@
-<h1 align="center">Arnel Robles</h1>
+<a href="https://baryo.dev"><img alt="Arnel Robles, software developer and consultant. I design and build the systems a business runs on, then keep them running." src="assets/hero.png" width="100%"></a>
 
 <p align="center">
-  <strong>I design and build the systems a business runs on, then keep them running.</strong><br>
-  <em>Multi-tenant platforms, the data underneath them, the AI on top, and the audit that checks it all holds.</em><br>
   <sub>.NET and PostgreSQL · multi-tenant SaaS · LLM and agent systems · security audits · Philippines, fully remote since 2020</sub>
 </p>
 
 <p align="center">
-  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Email me" src="https://img.shields.io/badge/email-arnelirobles%40gmail.com-1f6feb?style=flat-square&logo=gmail&logoColor=white"></a>
-  <a href="https://baryo.dev"><img alt="baryo.dev" src="https://img.shields.io/badge/site-baryo.dev-8957e5?style=flat-square"></a>
-  <a href="https://baryodev.medium.com"><img alt="Writing" src="https://img.shields.io/badge/writing-medium-333?style=flat-square&logo=medium"></a>
-  <a href="https://huggingface.co/arnelirobles"><img alt="Hugging Face" src="https://img.shields.io/badge/models-hugging%20face-ffcc4d?style=flat-square&logo=huggingface&logoColor=black"></a>
+  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Email me" src="https://img.shields.io/badge/email-arnelirobles%40gmail.com-0b7a55?style=flat-square&logo=gmail&logoColor=white"></a>
+  <a href="https://baryo.dev"><img alt="baryo.dev" src="https://img.shields.io/badge/site-baryo.dev-f08a24?style=flat-square"></a>
+  <a href="https://baryodev.medium.com"><img alt="Writing" src="https://img.shields.io/badge/writing-medium-1c2321?style=flat-square&logo=medium"></a>
+  <a href="https://huggingface.co/arnelirobles"><img alt="Hugging Face" src="https://img.shields.io/badge/models-hugging%20face-ffcd3c?style=flat-square&logo=huggingface&logoColor=black"></a>
 </p>
 
 <p align="center"><sub>
@@ -23,6 +21,8 @@
   <a href="#writing">Writing</a> ·
   <a href="#stack">Stack</a>
 </sub></p>
+
+<img alt="14 years in production, 15 changes merged upstream, 8 accepted bug reports, 31 public repos at BaryoDev" src="assets/stats.png" width="100%">
 
 > **You can contact me at [arnelirobles@gmail.com](mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub).**
 
@@ -37,9 +37,8 @@ In 30 seconds:
 - **I audit web applications** against OWASP WSTG and ASVS and hand back a report ranked by what to fix first.
 - **Fifteen changes merged upstream** in Umbraco, Marten and Testcontainers, nearly all for a bug my own projects hit.
 
----
-
-### The platform I design and run
+<a id="the-platform-i-design-and-run"></a>
+<img alt="The platform I design and run" src="assets/section-platform.png" width="100%">
 
 **[barakoCMS](https://github.com/BaryoDev/barakoCMS)** is an open-source data platform for .NET 10 on PostgreSQL. Customers define their own content types, fields, choice lists and references at runtime through the API, and tenant isolation, roles, field-level masking and audit apply to all of it. Event-sourced on Marten, so every change is on record. An event-driven workflow engine, 16 opt-in modules, and about 4,900 test methods run against real PostgreSQL and SeaweedFS through Testcontainers. MPL-2.0, currently 5.1.0.
 
@@ -57,9 +56,8 @@ The rest of the platform, all public:
 
 **Live** at [playground.baryo.dev/barakocms](https://playground.baryo.dev/barakocms).
 
----
-
-### LLM and agent systems
+<a id="llm-and-agent-systems"></a>
+<img alt="LLM and agent systems" src="assets/section-agents.png" width="100%">
 
 | Project | What it does |
 |---|---|
@@ -68,9 +66,8 @@ The rest of the platform, all public:
 | **[lean-agent](https://github.com/arnelirobles/lean-agent)** | How I run AI coding agents over a real ticket backlog, packaged as a Claude Code plugin. I now run it as one session on one model: it drafts, scripts run the mechanical checks, then it reviews its own change against six fixed questions in two passes, one to find problems and one to refute them. A finding not fixed in two rounds comes to me. The cascade mode is still in the plugin (a cheap model drafts and critiques, the expensive one sees only what the critic cannot close), and it took me from about **66 dollars of model use per change to about 25**, measured from the agent transcripts. My numbers, one .NET codebase, list prices. |
 | **[Abogado](https://huggingface.co/arnelirobles/abogado)** | A Philippine law assistant in English and Tagalog, published on Hugging Face. Qwen2.5-3B-Instruct fine-tuned with QLoRA on a Kaggle T4, with a [GGUF build](https://huggingface.co/arnelirobles/abogado-gguf) to run it locally. A small first version, 106 question and answer pairs from the 1987 Constitution. It refuses requests for private data and points people to a real lawyer instead of playing one. Apache-2.0. |
 
----
-
-### Security audits
+<a id="security-audits"></a>
+<img alt="Security audits" src="assets/section-security.png" width="100%">
 
 I audit web applications end to end and hand back a report a team can act on. The method was built on my own stack first, barakoCMS with its console and renderer exactly as deployed, before I would point it at anyone else's.
 
@@ -89,13 +86,12 @@ Broken access control and IDOR (an id from the URL used to load or mutate anothe
 
 </details>
 
----
+<a id="open-source-contributor"></a>
+<img alt="Open source contributor" src="assets/section-upstream.png" width="100%">
 
-### Open source contributor
-
-<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="15 merged upstream" src="https://img.shields.io/badge/upstream-15%20merged-2ea44f?style=flat-square&logo=github"></a>
-<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="8 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-8-1f6feb?style=flat-square&logo=github"></a>
-<a href="https://github.com/BaryoDev"><img alt="31 public repositories" src="https://img.shields.io/badge/%40BaryoDev-31%20public%20repos-8957e5?style=flat-square&logo=github"></a>
+<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="15 merged upstream" src="https://img.shields.io/badge/upstream-15%20merged-0b7a55?style=flat-square&logo=github"></a>
+<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="8 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-8-f08a24?style=flat-square&logo=github"></a>
+<a href="https://github.com/BaryoDev"><img alt="31 public repositories" src="https://img.shields.io/badge/%40BaryoDev-31%20public%20repos-c2461a?style=flat-square&logo=github"></a>
 
 **Fifteen merged changes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
@@ -122,9 +118,8 @@ Sometimes the useful contribution is not a pull request. On [marten#5457](https:
 
 **[upstream-fixes](https://github.com/arnelirobles/upstream-fixes)** writes each one up, and carries a runnable reproduction for marten#5215 against published NuGet packages, so you can watch that bug appear on one version and disappear on the next rather than take my word for it.
 
----
-
-### What I have built for other people
+<a id="what-i-have-built-for-other-people"></a>
+<img alt="What I have built for other people" src="assets/section-client.png" width="100%">
 
 The open source is the visible half. The other half is client and product work, mostly in places where a wrong number is somebody's money or somebody's medical record.
 
@@ -140,9 +135,8 @@ Modernisation is a thread through most of it: ASP.NET MVC and AngularJS onto cur
 
 Fully remote, across distributed teams in several time zones. Alongside the building: leading and mentoring developers, setting the standards the team codes against, running code review, technical discovery and estimation with stakeholders, and interviewing.
 
----
-
-### Libraries and tools
+<a id="libraries-and-tools"></a>
+<img alt="Libraries and tools" src="assets/section-libraries.png" width="100%">
 
 31 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
 
@@ -177,9 +171,8 @@ Fully remote, across distributed teams in several time zones. Alongside the buil
 | **provstrip** <sub>private</sub> | Strips provenance metadata from PNG and SVG without re-encoding, in Rust. It splices rather than rewrites, and the tests assert the kept bytes are identical to the input. |
 | **[fastendpoints-wolverine-lab](https://github.com/arnelirobles/fastendpoints-wolverine-lab)** | One operation written twice, on FastEndpoints and on Wolverine, against the same Marten database. The companion to a write-up comparing them. |
 
----
-
-### Writing
+<a id="writing"></a>
+<img alt="Writing" src="assets/section-writing.png" width="100%">
 
 Mostly postmortems of my own mistakes, and decisions with the reasoning attached.
 
@@ -196,9 +189,8 @@ Mostly postmortems of my own mistakes, and decisions with the reasoning attached
 
 More at [baryodev.medium.com](https://baryodev.medium.com).
 
----
-
-### How I work
+<a id="how-i-work"></a>
+<img alt="How I work" src="assets/section-how.png" width="100%">
 
 I sort decisions by how expensive they are to reverse. A storage engine, a tenancy model, a public contract and a licence are one-way doors: those get argued out in writing first, with the reasoning kept rather than just the outcome, so the next person can disagree with the argument instead of guessing at it. Most other things are cheaper to try than to debate. That is why barakoCMS 4.0 shipped one-way doors only and everything else waited for 5.0.
 
@@ -220,9 +212,8 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 
 </details>
 
----
-
-### Stack
+<a id="stack"></a>
+<img alt="Stack" src="assets/section-stack.png" width="100%">
 
 | Area | Tools and practice |
 |---|---|
@@ -239,7 +230,8 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 
 ---
 
+<a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Have something that has to last? Email arnelirobles@gmail.com, or book a call on baryo.dev." src="assets/contact.png" width="100%"></a>
+
 <p align="center">
-  You can contact me at any of these.<br>
-  📫 <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub">arnelirobles@gmail.com</a> · 🌐 <a href="https://baryo.dev">baryo.dev</a> · ✍️ <a href="https://baryodev.medium.com">baryodev.medium.com</a>
+  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub">arnelirobles@gmail.com</a> · <a href="https://baryo.dev">baryo.dev</a> · <a href="https://baryodev.medium.com">baryodev.medium.com</a>
 </p>
