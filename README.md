@@ -1,13 +1,12 @@
-<a href="https://baryo.dev"><img alt="Arnel Robles, software developer and consultant. I design and build the systems a business runs on, then keep them running." src="assets/hero.png" width="100%"></a>
+<a href="https://baryo.dev"><img alt="Arnel Robles, senior full-stack engineer. I design and build the systems a business runs on, then keep them running." src="assets/hero.png" width="100%"></a>
 
 <p align="center">
   <sub>.NET and PostgreSQL · multi-tenant SaaS · LLM and agent systems · security audits · Philippines, fully remote since 2020</sub>
 </p>
 
 <p align="center">
-  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Email me" src="https://img.shields.io/badge/email-arnelirobles%40gmail.com-0b7a55?style=flat-square&logo=gmail&logoColor=white"></a>
   <a href="https://baryo.dev"><img alt="baryo.dev" src="https://img.shields.io/badge/site-baryo.dev-f08a24?style=flat-square"></a>
-  <a href="https://baryodev.medium.com"><img alt="Writing" src="https://img.shields.io/badge/writing-medium-1c2321?style=flat-square&logo=medium"></a>
+  <a href="https://baryo.dev/blog/"><img alt="Blog" src="https://img.shields.io/badge/blog-baryo.dev%2Fblog-1c2321?style=flat-square"></a>
   <a href="https://huggingface.co/arnelirobles"><img alt="Hugging Face" src="https://img.shields.io/badge/models-hugging%20face-ffcd3c?style=flat-square&logo=huggingface&logoColor=black"></a>
 </p>
 
@@ -22,9 +21,7 @@
   <a href="#stack">Stack</a>
 </sub></p>
 
-<img alt="14 years in production, 15 changes merged upstream, 8 accepted bug reports, 31 public repos at BaryoDev" src="assets/stats.png" width="100%">
-
-> **You can contact me at [arnelirobles@gmail.com](mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub).**
+<img alt="14 years in production, 17 changes merged upstream, 8 accepted bug reports, 41 public repos at BaryoDev" src="assets/stats.png" width="100%">
 
 ---
 
@@ -35,12 +32,13 @@ In 30 seconds:
 - **I design platforms.** [barakoCMS](https://github.com/BaryoDev/barakoCMS) is a multi-tenant, metadata-driven data platform on .NET and PostgreSQL, with its console, renderer, client and deploy tool, all public and all running.
 - **I ship LLM and agent systems** that respect permissions and get checked by something other than a person's say-so.
 - **I audit web applications** against OWASP WSTG and ASVS and hand back a report ranked by what to fix first.
-- **Fifteen changes merged upstream** in Umbraco, Marten and Testcontainers, nearly all for a bug my own projects hit.
+- **Seventeen changes merged upstream** in Umbraco, Marten and Testcontainers, nearly all for a bug my own projects hit. Tagged as an Umbraco contributor.
+- **Ten Umbraco 17 packages on NuGet**, built for my own blog and shared, from a PWA to comments, analytics and post alerts.
 
 <a id="the-platform-i-design-and-run"></a>
 <img alt="The platform I design and run" src="assets/section-platform.png" width="100%">
 
-**[barakoCMS](https://github.com/BaryoDev/barakoCMS)** is an open-source data platform for .NET 10 on PostgreSQL. Customers define their own content types, fields, choice lists and references at runtime through the API, and tenant isolation, roles, field-level masking and audit apply to all of it. Event-sourced on Marten, so every change is on record. An event-driven workflow engine, 16 opt-in modules, and about 4,900 test methods run against real PostgreSQL and SeaweedFS through Testcontainers. MPL-2.0, currently 5.3.0.
+**[barakoCMS](https://github.com/BaryoDev/barakoCMS)** is an open-source data platform for .NET 10 on PostgreSQL. Customers define their own content types, fields, choice lists and references at runtime through the API, and tenant isolation, roles, field-level masking and audit apply to all of it. Event-sourced on Marten, so every change is on record. An event-driven workflow engine, 16 opt-in modules, and about 4,900 test methods run against real PostgreSQL and SeaweedFS through Testcontainers. MPL-2.0, currently 5.5.0.
 
 The decisions are the work. Event sourcing over CRUD, and what that costs on the read side. Modules compiled in rather than loaded at runtime, because a plugins folder is a place where writing a file runs code. One cheap VM instead of a platform, and what that trades away. Each is written up with the reasoning, not just the outcome.
 
@@ -89,15 +87,15 @@ Broken access control and IDOR (an id from the URL used to load or mutate anothe
 <a id="open-source-contributor"></a>
 <img alt="Open source contributor" src="assets/section-upstream.png" width="100%">
 
-<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="15 merged upstream" src="https://img.shields.io/badge/upstream-15%20merged-0b7a55?style=flat-square&logo=github"></a>
+<a href="https://github.com/search?q=author%3Aarnelirobles+type%3Apr+is%3Amerged+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=pullrequests"><img alt="17 merged upstream" src="https://img.shields.io/badge/upstream-17%20merged-0b7a55?style=flat-square&logo=github"></a>
 <a href="https://github.com/search?q=author%3Aarnelirobles+type%3Aissue+org%3Aumbraco+org%3Atestcontainers+org%3AJasperFx&type=issues"><img alt="8 accepted bug reports" src="https://img.shields.io/badge/bug%20reports%20accepted-8-f08a24?style=flat-square&logo=github"></a>
-<a href="https://github.com/BaryoDev"><img alt="31 public repositories" src="https://img.shields.io/badge/%40BaryoDev-31%20public%20repos-c2461a?style=flat-square&logo=github"></a>
+<a href="https://github.com/BaryoDev"><img alt="41 public repositories" src="https://img.shields.io/badge/%40BaryoDev-41%20public%20repos-c2461a?style=flat-square&logo=github"></a>
 
-**Fifteen merged changes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
+**Seventeen merged changes and eight accepted bug reports** in libraries I run in production, across four repos totalling 13k stars. Most started from a bug I hit in my own projects rather than from browsing a tracker for something to fix. The badges are live searches, so they answer for themselves.
 
 | Project | What was wrong |
 |---|---|
-| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.3k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2. A disabled or locked out user kept a valid back-office cookie, so they were issued fresh tokens and landed in an empty back office where every call returned 403 and there was no way to log out. [#23995](https://github.com/umbraco/Umbraco-CMS/pull/23995) signs them out instead, in the 17.8 and 18.3 release candidates |
+| **[umbraco/Umbraco-CMS](https://github.com/umbraco/Umbraco-CMS)**<br><sub>★5.3k</sub> | Instances sharing a database failed each other's requests registering the same OpenIddict application. [#23599](https://github.com/umbraco/Umbraco-CMS/pull/23599), [#23727](https://github.com/umbraco/Umbraco-CMS/pull/23727), shipped in 17.7 and 18.2. A disabled or locked out user kept a valid back-office cookie, so they were issued fresh tokens and landed in an empty back office where every call returned 403 and there was no way to log out. [#23995](https://github.com/umbraco/Umbraco-CMS/pull/23995) signs them out instead. On SQLite, the Delivery API returned create and update dates without the UTC marker, so clients read them as local time; I traced it to a refactor in 18.0 that dropped the UTC conversion. [#24514](https://github.com/umbraco/Umbraco-CMS/pull/24514). Removing media URLs from rich text on save also dropped the image's other attributes. [#24515](https://github.com/umbraco/Umbraco-CMS/pull/24515), where the reviewer found the same bug in the restore path and fixed it alongside |
 | **[testcontainers/testcontainers-dotnet](https://github.com/testcontainers/testcontainers-dotnet)**<br><sub>★4.4k</sub> | MongoDB replica-set init was not idempotent, so a reused container hung against a one-hour timeout. [#1731](https://github.com/testcontainers/testcontainers-dotnet/pull/1731), [#1735](https://github.com/testcontainers/testcontainers-dotnet/pull/1735). A reused Couchbase container then stalled on the first step of configuring a cluster that was already configured. [#1736](https://github.com/testcontainers/testcontainers-dotnet/pull/1736). Confluent Platform 8.x images exited on startup because the module left a trailing comma in the advertised listeners, which Kafka 4 rejects. [#1772](https://github.com/testcontainers/testcontainers-dotnet/pull/1772). With that fixed, they still defaulted to ZooKeeper, which 8.x removed. [#1775](https://github.com/testcontainers/testcontainers-dotnet/pull/1775). The docs never said how builder calls combine, so setting your own startup callback on a module silently replaced its provisioning, and MongoDB never initiated its replica set. [#1770](https://github.com/testcontainers/testcontainers-dotnet/pull/1770) documents the rules on a page of their own |
 | **[JasperFx/marten](https://github.com/JasperFx/marten)**<br><sub>★3.5k</sub> | `HardDeleteWhere` could not remove already soft-deleted rows, and returned cleanly either way. [#5215](https://github.com/JasperFx/marten/pull/5215), [#5202](https://github.com/JasperFx/marten/pull/5202), [#5240](https://github.com/JasperFx/marten/pull/5240). The parameterised `MatchesJsonPath` overload threw on every call, so no one could have been using it. [#5289](https://github.com/JasperFx/marten/pull/5289). The pgvector docs still described a recall cap the library had stopped applying, and the caveat that replaced it was wrong for hybrid search. [#5467](https://github.com/JasperFx/marten/pull/5467) |
 | **[JasperFx/jasperfx](https://github.com/JasperFx/jasperfx)**<br><sub>core library</sub> | The event loader claimed a ceiling it had never scanned, so a fully skipped batch could advance past events and lose them permanently. Reported on Marten, then fixed at the source. [#670](https://github.com/JasperFx/jasperfx/pull/670) |
@@ -129,7 +127,7 @@ The open source is the visible half. The other half is client and product work, 
 | **Case and document workflow** | ASP.NET Core and EF Core behind a React front end for a national dispute resolution body, handling case and document workflows. Azure Functions, App Services and Storage, with CI/CD on Azure DevOps. Also maintained and extended an Umbraco CMS platform, which is where the upstream contributions started. |
 | **Gaming management and analytics** | Led the early build of a casino management and analytics platform on .NET, React and SQL Server, running the development and QA teams and owning the release pipelines. |
 | **Enterprise and healthcare integration** | .NET and Java integrations across ERP, financial, materials and payroll systems at a large agribusiness, plus hospital and national health insurance systems. SOAP and XML services, SSIS between AS400 DB2 and SQL Server, and AS400 administration at 24/7 availability. |
-| **Independent client delivery** | Feature and defect delivery across established codebases, middleware, third-party and Stripe payment integrations in JavaScript for a client platform. Took a production application from .NET 8 to .NET 10 with its ORM and test framework, 651 tests passing. |
+| **Independent client delivery** | Feature and defect delivery across established codebases, middleware, third-party and Stripe payment integrations in JavaScript for a client platform. Took a production application to .NET 9 along with its ORM and test framework. |
 
 Modernisation is a thread through most of it: ASP.NET MVC and AngularJS onto current .NET with the business running throughout, VB6 rebuilt on ASP.NET Core, and a large Oracle schema moved to PostgreSQL behind a live application to remove the licensing cost.
 
@@ -138,7 +136,7 @@ Fully remote, across distributed teams in several time zones. Alongside the buil
 <a id="libraries-and-tools"></a>
 <img alt="Libraries and tools" src="assets/section-libraries.png" width="100%">
 
-31 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
+41 public repositories under [@BaryoDev](https://github.com/BaryoDev). Each solves one problem, ships to a package registry, and is tested rather than described.
 
 #### .NET
 
@@ -149,8 +147,9 @@ Fully remote, across distributed teams in several time zones. Alongside the buil
 | **[Carom](https://github.com/BaryoDev/Carom)** | Resilience: retry, timeout, circuit breaker, bulkhead, rate limiting, fallback, hedging. Zero dependencies in the core, netstandard2.0 upward. |
 | **[Talaan](https://github.com/BaryoDev/Talaan)** | Spreadsheet and CSV reader, xlsx and CSV, zero dependencies. barakoCMS consumes it as a published package rather than a project reference, so the packaging is exercised for real. |
 | **[Vouch](https://github.com/BaryoDev/Vouch)** | Fluent assertions with no dependencies: the `.Should()` surface of FluentAssertions under MPL-2.0, 0.1.0. References no test framework, so it works under xUnit, NUnit and MSTest. |
-| **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.5.2 on NuGet. |
+| **[umbraco-pwa](https://github.com/BaryoDev/umbraco-pwa)** | Turns an Umbraco site into an installable, offline-capable app. On the Umbraco Marketplace, 0.6.0 on NuGet, with merged pull requests from two outside contributors. |
 | **[umbraco-read-aloud](https://github.com/BaryoDev/umbraco-read-aloud)** | Read-aloud for an Umbraco site using Microsoft Edge neural voices. |
+| **Umbraco 17 blog packages** | Built for baryo.dev and published on NuGet: [Comments](https://github.com/BaryoDev/umbraco-comments), [Analytics](https://github.com/BaryoDev/umbraco-analytics) (cookie-free), [ShareLike](https://github.com/BaryoDev/umbraco-share-like), [RelatedPosts](https://github.com/BaryoDev/umbraco-related-posts), [SocialPost](https://github.com/BaryoDev/umbraco-social-post), [PostAlerts](https://github.com/BaryoDev/umbraco-post-alerts) (weekly email digest and web push), [MediumImport](https://github.com/BaryoDev/BaryoDev.Umbraco.MediumImport) and [AiAssistant](https://github.com/BaryoDev/BaryoDev.Umbraco.AiAssistant). |
 
 #### TypeScript and JavaScript
 
@@ -178,16 +177,17 @@ Mostly postmortems of my own mistakes, and decisions with the reasoning attached
 
 | Article | About |
 |---|---|
-| [My benchmark said my library was 2x faster. It was not.](https://baryodev.medium.com/my-benchmark-said-my-library-was-2x-faster-it-was-not-d6a6110bf354) | A performance gate that could not have failed for its own reason, and what it took to make it resolve what it reports |
-| [We built a modular CMS and deliberately did not make the modules plugins](https://baryodev.medium.com/we-built-a-modular-cms-and-deliberately-did-not-make-the-modules-plugins-66a30c79b1e5) | Runtime assembly loading forecloses Native AOT permanently, and a plugins folder is a place where writing a file runs code |
-| [Your ORM is reading your lambdas with a regex](https://javascript.plainenglish.io/your-orm-is-reading-your-lambdas-with-a-regex-c1ebaede899d) | What lambda-parsing query builders actually do, and where that breaks |
-| [Migrating from Polly to Carom](https://medium.com/codetodeploy/migrating-from-polly-to-carom-04791978a963) | The Polly maintenance fee is reasonable, the mechanism is the problem, and here is a pattern-by-pattern migration |
-| [Mapsicle 2.1: honest numbers against AutoMapper](https://baryodev.medium.com/mapsicle-2-1-an-mpl-2-0-object-mapper-and-honest-numbers-against-automapper-fc0f726369dd) | Two architectures, medians of repeated runs, and a section on where it loses |
-| [The tenant filter that only worked on the way in](https://baryodev.medium.com/the-tenant-filter-that-only-worked-on-the-way-in-3bad8544d165) | A multi-tenant event-sourcing bug that reads correctly and leaks on the way out |
-| [One cheap VM, nineteen containers, no platform](https://medium.com/codetodeploy/one-cheap-vm-nineteen-containers-no-platform-5e76ff4e5c68) | What running everything on one box costs, and what it saves |
-| [What two hundred issues taught us about building with AI](https://javascript.plainenglish.io/what-two-hundred-issues-taught-us-about-building-with-ai-e6b315bf59ad) | Where AI-assisted work fails quietly, and which gates catch it |
+| [Mapsicle 1.3.0: my benchmark said 2x faster, and it was not](https://baryo.dev/blog/my-benchmark-said-my-library-was-2x-faster-it-was-not/) | A performance gate that could not have failed for its own reason, and what it took to make it resolve what it reports |
+| [barakoCMS modules are NuGet packages, not plugins, on purpose](https://baryo.dev/blog/we-built-a-modular-cms-and-deliberately-did-not-make-the-modules-plugins/) | Runtime assembly loading forecloses Native AOT permanently, and a plugins folder is a place where writing a file runs code |
+| [Your JavaScript ORM reads lambdas with a regex (rnxORM did too)](https://baryo.dev/blog/your-orm-is-reading-your-lambdas-with-a-regex/) | What lambda-parsing query builders actually do, and where that breaks |
+| [Migrating from Polly to Carom](https://baryo.dev/blog/migrating-from-polly-to-carom/) | A pattern-by-pattern migration |
+| [Mapsicle 2.1, benchmarked against AutoMapper](https://baryo.dev/blog/mapsicle-2-1-an-mpl-2-0-object-mapper-and-honest-numbers-against-automapper/) | Two architectures, medians of repeated runs, and a section on where it loses |
+| [Marten event masking: erasing one tenant destroyed another's data](https://baryo.dev/blog/the-tenant-filter-that-only-worked-on-the-way-in/) | A multi-tenant event-sourcing bug that reads correctly and leaks on the way out |
+| [BaryoVM: nineteen containers on one cheap VM](https://baryo.dev/blog/one-cheap-vm-nineteen-containers-no-platform/) | What running everything on one box costs, and what it saves |
+| [What 202 BaryoDev issues taught us about building with AI](https://baryo.dev/blog/what-two-hundred-issues-taught-us-about-building-with-ai/) | Where AI-assisted work fails quietly, and which gates catch it |
+| [Building five Umbraco 17 packages on .NET 10](https://baryo.dev/blog/building-five-umbraco-17-packages-on-net-10/) | Comments, analytics, likes, related posts and social posting for my own blog, and how they fit together |
 
-More at [baryodev.medium.com](https://baryodev.medium.com).
+More at [baryo.dev/blog](https://baryo.dev/blog/). Posts tagged Umbraco also appear on the Umbraco community blog.
 
 <a id="how-i-work"></a>
 <img alt="How I work" src="assets/section-how.png" width="100%">
@@ -230,8 +230,8 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 
 ---
 
-<a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Have something that has to last? Email arnelirobles@gmail.com, or book a call on baryo.dev." src="assets/contact.png" width="100%"></a>
+<a href="https://baryo.dev/blog/"><img alt="More on baryo.dev: notes on what I build and what broke along the way." src="assets/contact.png" width="100%"></a>
 
 <p align="center">
-  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub">arnelirobles@gmail.com</a> · <a href="https://baryo.dev">baryo.dev</a> · <a href="https://baryodev.medium.com">baryodev.medium.com</a>
+  <a href="https://baryo.dev">baryo.dev</a> · <a href="https://baryo.dev/blog/">blog</a> · <a href="https://github.com/BaryoDev">@BaryoDev</a> · <a href="https://huggingface.co/arnelirobles">Hugging Face</a>
 </p>

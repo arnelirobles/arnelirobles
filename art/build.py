@@ -28,7 +28,7 @@ HERO = """
   <div class="dots" style="left:640px;top:58px"></div>
   <div class="dots" style="left:600px;top:478px;--c:#e8755a;width:26px;height:26px"></div>
   <div style="position:absolute;left:64px;top:92px;width:640px">
-    <div style="font-size:24px;font-weight:700;color:var(--leaf);letter-spacing:-.01em">Arnel Robles · Software developer &amp; consultant</div>
+    <div style="font-size:24px;font-weight:700;color:var(--leaf);letter-spacing:-.01em">Arnel Robles · Senior full-stack engineer</div>
     <div style="margin-top:14px;font-size:50px;line-height:1.08;font-weight:800;letter-spacing:-.025em">
       I design and build the <span style="color:var(--leaf)">systems a business runs on,</span> then keep them running.</div>
     <div style="margin-top:22px;font-size:19px;line-height:1.6;color:var(--body);max-width:560px">
@@ -52,8 +52,8 @@ SECTION = """
   </div>
 </div>"""
 
-STATS = [("14", "years in production"), ("15", "changes merged upstream"),
-         ("8", "accepted bug reports"), ("31", "public repos at BaryoDev")]
+STATS = [("14", "years in production"), ("17", "changes merged upstream"),
+         ("8", "accepted bug reports"), ("41", "public repos at BaryoDev")]
 
 STATS_HTML = """
 <div class="card" style="background:var(--leaf-dark)">
@@ -70,10 +70,10 @@ CONTACT = """
   <div style="position:absolute;right:-70px;top:-80px;width:240px;height:240px;border-radius:50%;background:var(--sun-soft)"></div>
   <div class="dots" style="left:640px;top:28px;--c:#e8755a"></div>
   <div style="position:absolute;left:64px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
-    <div style="font-size:34px;font-weight:800;letter-spacing:-.02em">Have something that has to last?</div>
-    <div style="margin-top:8px;font-size:19px;color:var(--body)">Email me, or book a call on baryo.dev.</div>
+    <div style="font-size:34px;font-weight:800;letter-spacing:-.02em">More on baryo.dev</div>
+    <div style="margin-top:8px;font-size:19px;color:var(--body)">Notes on what I build and what broke along the way.</div>
   </div>
-  <div style="position:absolute;right:120px;top:50%;transform:translateY(-50%);background:var(--leaf);color:#fff;font-weight:700;font-size:19px;padding:18px 30px;border-radius:999px">arnelirobles@gmail.com</div>
+  <div style="position:absolute;right:120px;top:50%;transform:translateY(-50%);background:var(--leaf);color:#fff;font-weight:700;font-size:19px;padding:18px 30px;border-radius:999px">baryo.dev/blog</div>
 </div>"""
 
 ACCENTS = [("#ffcd3c", "#7cc4a4"), ("#e8755a", "#ffcd3c"), ("#7cc4a4", "#f6a99a"), ("#f08a24", "#7cc4a4")]
