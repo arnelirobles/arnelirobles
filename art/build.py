@@ -52,8 +52,8 @@ SECTION = """
   </div>
 </div>"""
 
-STATS = [("14", "years in production"), ("15", "changes merged upstream"),
-         ("8", "accepted bug reports"), ("31", "public repos at BaryoDev")]
+STATS = [("14", "years in production"), ("17", "changes merged upstream"),
+         ("8", "accepted bug reports"), ("42", "public repos at BaryoDev")]
 
 STATS_HTML = """
 <div class="card" style="background:var(--leaf-dark)">
