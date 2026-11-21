@@ -71,9 +71,9 @@ CONTACT = """
   <div class="dots" style="left:640px;top:28px;--c:#e8755a"></div>
   <div style="position:absolute;left:64px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center">
     <div style="font-size:34px;font-weight:800;letter-spacing:-.02em">Have something that has to last?</div>
-    <div style="margin-top:8px;font-size:19px;color:var(--body)">Email me, or book a call on baryo.dev.</div>
+    <div style="margin-top:8px;font-size:19px;color:var(--body)">Book a call on baryo.dev.</div>
   </div>
-  <div style="position:absolute;right:120px;top:50%;transform:translateY(-50%);background:var(--leaf);color:#fff;font-weight:700;font-size:19px;padding:18px 30px;border-radius:999px">arnelirobles@gmail.com</div>
+  <div style="position:absolute;right:120px;top:50%;transform:translateY(-50%);background:var(--leaf);color:#fff;font-weight:700;font-size:19px;padding:18px 30px;border-radius:999px">baryo.dev</div>
 </div>"""
 
 ACCENTS = [("#ffcd3c", "#7cc4a4"), ("#e8755a", "#ffcd3c"), ("#7cc4a4", "#f6a99a"), ("#f08a24", "#7cc4a4")]

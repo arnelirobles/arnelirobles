@@ -5,7 +5,6 @@
 </p>
 
 <p align="center">
-  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Email me" src="https://img.shields.io/badge/email-arnelirobles%40gmail.com-0b7a55?style=flat-square&logo=gmail&logoColor=white"></a>
   <a href="https://baryo.dev"><img alt="baryo.dev" src="https://img.shields.io/badge/site-baryo.dev-f08a24?style=flat-square"></a>
   <a href="https://baryodev.medium.com"><img alt="Writing" src="https://img.shields.io/badge/writing-medium-1c2321?style=flat-square&logo=medium"></a>
   <a href="https://huggingface.co/arnelirobles"><img alt="Hugging Face" src="https://img.shields.io/badge/models-hugging%20face-ffcd3c?style=flat-square&logo=huggingface&logoColor=black"></a>
@@ -24,7 +23,7 @@
 
 <img alt="14 years in production, 18 changes merged upstream, 8 accepted bug reports, 42 public repos at BaryoDev" src="assets/stats.png" width="100%">
 
-> **You can contact me at [arnelirobles@gmail.com](mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub).**
+> **Book a call or get in touch on [baryo.dev](https://baryo.dev).**
 
 ---
 
@@ -230,8 +229,8 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 
 ---
 
-<a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub"><img alt="Have something that has to last? Email arnelirobles@gmail.com, or book a call on baryo.dev." src="assets/contact.png" width="100%"></a>
+<a href="https://baryo.dev"><img alt="Have something that has to last? Book a call on baryo.dev." src="assets/contact.png" width="100%"></a>
 
 <p align="center">
-  <a href="mailto:arnelirobles@gmail.com?subject=Hello%20from%20your%20GitHub">arnelirobles@gmail.com</a> · <a href="https://baryo.dev">baryo.dev</a> · <a href="https://baryodev.medium.com">baryodev.medium.com</a>
+  <a href="https://baryo.dev">baryo.dev</a> · <a href="https://baryodev.medium.com">baryodev.medium.com</a>
 </p>
