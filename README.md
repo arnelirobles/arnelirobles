@@ -23,8 +23,6 @@
 
 <img alt="14 years in production, 19 changes merged upstream, 8 accepted bug reports, 42 public repos at BaryoDev" src="assets/stats.png" width="100%">
 
-> **Book a call or get in touch on [baryo.dev](https://baryo.dev).**
-
 ---
 
 14 years in production software, most of it on systems where being wrong costs something: derivatives for US financial institutions, hospital and national health insurance systems, ERP and payroll. Remote since 2020, on teams in the US and New Zealand.
@@ -228,8 +226,6 @@ Some of this touches systems and data that aren't mine. I stay inside what I'm a
 | **Security** | OWASP Top 10 and CWE secure code review, access-control and IDOR analysis, OAuth 2.0, OIDC and JWT, secrets and dependency auditing, static-first with read-only verification |
 
 ---
-
-<a href="https://baryo.dev"><img alt="Have something that has to last? Book a call on baryo.dev." src="assets/contact.png" width="100%"></a>
 
 <p align="center">
   <a href="https://baryo.dev">baryo.dev</a> · <a href="https://baryodev.medium.com">baryodev.medium.com</a>
