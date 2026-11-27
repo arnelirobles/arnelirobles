@@ -52,7 +52,7 @@ SECTION = """
   </div>
 </div>"""
 
-STATS = [("14", "years in production"), ("19", "changes merged upstream"),
+STATS = [("14", "years in production"), ("20", "changes merged upstream"),
          ("8", "accepted bug reports"), ("42", "public repos at BaryoDev")]
 
 STATS_HTML = """
