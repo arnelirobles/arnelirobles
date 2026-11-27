@@ -32,7 +32,7 @@ In 30 seconds:
 - **I design platforms.** [barakoCMS](https://github.com/BaryoDev/barakoCMS) is a multi-tenant, metadata-driven data platform on .NET and PostgreSQL, with its console, renderer, client and deploy tool, all public and all running.
 - **I ship LLM and agent systems** that respect permissions and get checked by something other than a person's say-so.
 - **I audit web applications** against OWASP WSTG and ASVS and hand back a report ranked by what to fix first.
-- **Twenty changes merged upstream** in Umbraco, Marten and Testcontainers, nearly all for a bug my own projects hit.
+- **Twenty changes merged upstream** in Umbraco, Marten and Testcontainers, most of them for a bug my own projects hit.
 
 <a id="the-platform-i-design-and-run"></a>
 <img alt="The platform I design and run" src="assets/section-platform.png" width="100%">
